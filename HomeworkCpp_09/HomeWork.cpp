@@ -5,6 +5,67 @@ void HomeWork::Run()
 	system("cls");
 	setlocale(LC_ALL, "Russian.utf8");
 
-	Task8 task;
-	task.Run();
+	bool exit = false;
+	std::string text = "Выберите пункт меню";
+	std::string items[10] = { "Задача 1",
+							  "Задача 2",
+							  "Задача 3",
+							  "Задача 4",
+							  "Задача 5",
+							  "Задача 6",
+							  "Задача 7",
+							  "Задача 8",
+							  "Задача 9",							  
+							  "Выход" };
+
+	MenuController menu(items, 10);
+
+	Task1 task1;
+	Task2 task2;
+	Task3 task3;
+	Task4 task4;
+	Task5 task5;
+	Task6 task6;
+	Task7 task7;
+	Task8 task8;
+	Task9 task9;
+
+	while (!exit)
+	{
+		switch (menu.selectedMenuItem(text))
+		{
+		case 0:			
+			task1.Run();
+			break;
+		case 1:			
+			task2.Run();
+			break;
+		case 2:			
+			task3.Run();
+			break;
+		case 3:			
+			task4.Run();
+			break;
+		case 4:
+			task5.Run();
+			break;
+		case 5:			
+			task6.Run();
+			break;
+		case 6:			
+			task7.Run();
+			break;
+		case 7:			
+			task8.Run();
+			break;
+		case 8:			
+			task9.Run();
+			break;
+		case 9:			
+			exit = true;
+			break;		
+		}
+
+		_getch();
+	}	
 }

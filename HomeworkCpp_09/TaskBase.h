@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <Windows.h>
 #include "Convert/Convert.h"
 
 /// <summary>

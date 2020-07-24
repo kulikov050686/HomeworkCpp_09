@@ -13,7 +13,7 @@ public:
 	/// </summary>
 	void Run() override;
 
-private:
+protected:
 
 	/// <summary>
 	/// Проверяет является ли сторока действительным числом

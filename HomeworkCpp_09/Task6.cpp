@@ -42,5 +42,3 @@ int Task6::WordCount(std::string str)
 
 	return 0;
 }
-
-

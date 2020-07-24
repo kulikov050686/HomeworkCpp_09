@@ -13,7 +13,7 @@ public:
 	/// </summary>
 	void Run() override;
 
-private:
+protected:
 
 	/// <summary>
 	/// Определяет количество слов в тексте
