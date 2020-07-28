@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <map>
 #include "Convert/Convert.h"
 
 /// <summary>

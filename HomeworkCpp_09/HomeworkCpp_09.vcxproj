@@ -142,6 +142,7 @@
     <ClCompile Include="Convert\Convert.cpp" />
     <ClCompile Include="HomeWork.cpp" />
     <ClCompile Include="HomeworkCpp_09.cpp" />
+    <ClCompile Include="Task10.cpp" />
     <ClCompile Include="Task5.cpp" />
     <ClCompile Include="Task6.cpp" />
     <ClCompile Include="Task7.cpp" />
@@ -158,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="Convert\Convert.h" />
     <ClInclude Include="HomeWork.h" />
+    <ClInclude Include="Task10.h" />
     <ClInclude Include="Task5.h" />
     <ClInclude Include="Task6.h" />
     <ClInclude Include="Task7.h" />
