@@ -13,11 +13,17 @@ public:
 	/// </summary>
 	void Run() override;
 
-private:
+protected:
 
 	/// <summary>
 	/// Преобразует число в строку в виде римской цифры
 	/// </summary>
 	/// <param name="number"> Число </param>	
 	std::string RomanNumeral(int number);
+
+	/// <summary>
+	/// Преобразует число в римское число в виде строки
+	/// </summary>
+	/// <param name="number"> Число </param>	
+	std::string ToRoma(int number);
 };

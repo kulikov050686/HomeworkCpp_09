@@ -8,153 +8,13 @@ void Task7::Run()
 	std::string strNumber;
 	std::cout << "Введите положительное целое число: ";
 	std::getline(std::cin, strNumber);
-
 	int number = 0;
-	int numberOf1000 = 0;
-	int numberOf500 = 0;
-	int numberOf100 = 0;
-	int numberOf50 = 0;
-	int numberOf10 = 0;
-	int numberOf5 = 0;
-
 
 	if (Convert::ToInt(strNumber, number))
 	{
 		if (number > 0)
 		{
-			strNumber = "";
-
-			numberOf1000 = number / 1000;
-			number -= numberOf1000 * 1000;
-
-			numberOf500 = number / 500;
-			number -= numberOf500 * 500;
-
-			numberOf100 = number / 100;
-			number -= numberOf100 * 100;
-
-			numberOf50 = number / 50;
-			number -= numberOf50 * 50;
-
-			numberOf10 = number / 10;
-			number -= numberOf10 * 10;
-
-			numberOf5 = number / 5;
-
-			if (number >= 5)
-			{
-				number -= numberOf5 * 5;
-			}
-			
-			if (numberOf1000 > 0)
-			{
-				for (int i = 0; i < numberOf1000; i++)
-				{
-					strNumber += RomanNumeral(1000);
-				}
-			}
-			
-			if (numberOf500 == 1)
-			{
-				if (0 <= numberOf100 && numberOf100 < 4)
-				{
-					strNumber += RomanNumeral(500);
-
-					for (int i = 0; i < numberOf100; i++)
-					{
-						strNumber += RomanNumeral(100);
-					}
-				}
-
-				if (numberOf100 == 4)
-				{
-					strNumber += "CM";
-				}
-			}
-			else
-			{
-				if (0 < numberOf100 && numberOf100 < 4)
-				{
-					for (int i = 0; i < numberOf100; i++)
-					{
-						strNumber += RomanNumeral(100);
-					}
-				}
-
-				if (numberOf100 == 4)
-				{
-					strNumber += "CD";
-				}
-			}
-
-			if (numberOf50 == 1)
-			{
-				if (0 <= numberOf10 && numberOf10 < 4)
-				{
-					strNumber += RomanNumeral(50);
-
-					for (int i = 0; i < numberOf10; i++)
-					{
-						strNumber += RomanNumeral(10);
-					}
-				}
-
-				if (numberOf10 == 4)
-				{
-					strNumber += "XC";
-				}
-			}
-			else
-			{
-				if (0 <= numberOf10 && numberOf10 < 4)
-				{
-					for (int i = 0; i < numberOf10; i++)
-					{
-						strNumber += RomanNumeral(10);
-					}
-				}
-
-				if (numberOf10 == 4)
-				{
-					strNumber += "XL";
-				}
-			}
-
-			if (numberOf5 == 1)
-			{
-				if (0 <= number && number < 4)
-				{
-					strNumber += RomanNumeral(5);
-
-					for (int i = 0; i < number; i++)
-					{
-						strNumber += RomanNumeral(1);
-					}
-				}
-
-				if (number == 4)
-				{
-					strNumber += "IX";
-				}
-			}
-			else
-			{
-				if (0 <= number && number < 4)
-				{
-					for (int i = 0; i < number; i++)
-					{
-						strNumber += RomanNumeral(1);
-					}
-				}
-
-				if (number == 4)
-				{
-					strNumber += "IV";
-				}
-			}
-
-			std::cout << "Вывод: " << strNumber << std::endl;
-
+			std::cout << "Вывод: " << ToRoma(number) << std::endl;
 		}
 		else
 		{
@@ -195,4 +55,146 @@ std::string Task7::RomanNumeral(int number)
 	}
 
 	return "Error!!!";
+}
+
+std::string Task7::ToRoma(int number)
+{	
+	int numberOf1000 = 0;
+	int numberOf500 = 0;
+	int numberOf100 = 0;
+	int numberOf50 = 0;
+	int numberOf10 = 0;
+	int numberOf5 = 0;
+	std::string strNumber = "";
+
+	numberOf1000 = number / 1000;
+	number -= numberOf1000 * 1000;
+
+	numberOf500 = number / 500;
+	number -= numberOf500 * 500;
+
+	numberOf100 = number / 100;
+	number -= numberOf100 * 100;
+
+	numberOf50 = number / 50;
+	number -= numberOf50 * 50;
+
+	numberOf10 = number / 10;
+	number -= numberOf10 * 10;
+
+	numberOf5 = number / 5;
+
+	if (number >= 5)
+	{
+		number -= numberOf5 * 5;
+	}
+
+	if (numberOf1000 > 0)
+	{
+		for (int i = 0; i < numberOf1000; i++)
+		{
+			strNumber += RomanNumeral(1000);
+		}
+	}
+
+	if (numberOf500 == 1)
+	{
+		if (0 <= numberOf100 && numberOf100 < 4)
+		{
+			strNumber += RomanNumeral(500);
+
+			for (int i = 0; i < numberOf100; i++)
+			{
+				strNumber += RomanNumeral(100);
+			}
+		}
+
+		if (numberOf100 == 4)
+		{
+			strNumber += "CM";
+		}
+	}
+	else
+	{
+		if (0 < numberOf100 && numberOf100 < 4)
+		{
+			for (int i = 0; i < numberOf100; i++)
+			{
+				strNumber += RomanNumeral(100);
+			}
+		}
+
+		if (numberOf100 == 4)
+		{
+			strNumber += "CD";
+		}
+	}
+
+	if (numberOf50 == 1)
+	{
+		if (0 <= numberOf10 && numberOf10 < 4)
+		{
+			strNumber += RomanNumeral(50);
+
+			for (int i = 0; i < numberOf10; i++)
+			{
+				strNumber += RomanNumeral(10);
+			}
+		}
+
+		if (numberOf10 == 4)
+		{
+			strNumber += "XC";
+		}
+	}
+	else
+	{
+		if (0 <= numberOf10 && numberOf10 < 4)
+		{
+			for (int i = 0; i < numberOf10; i++)
+			{
+				strNumber += RomanNumeral(10);
+			}
+		}
+
+		if (numberOf10 == 4)
+		{
+			strNumber += "XL";
+		}
+	}
+
+	if (numberOf5 == 1)
+	{
+		if (0 <= number && number < 4)
+		{
+			strNumber += RomanNumeral(5);
+
+			for (int i = 0; i < number; i++)
+			{
+				strNumber += RomanNumeral(1);
+			}
+		}
+
+		if (number == 4)
+		{
+			strNumber += "IX";
+		}
+	}
+	else
+	{
+		if (0 <= number && number < 4)
+		{
+			for (int i = 0; i < number; i++)
+			{
+				strNumber += RomanNumeral(1);
+			}
+		}
+
+		if (number == 4)
+		{
+			strNumber += "IV";
+		}
+	}
+
+	return strNumber;
 }
