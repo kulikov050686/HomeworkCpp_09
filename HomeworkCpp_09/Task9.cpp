@@ -102,6 +102,20 @@ bool Task9::ToDouble(std::string strNumber, double& number)
 	double result;
 	int numeral = 0;
 	double temp = 0;
+	bool key = true;
+
+	for (int i = 0; i < strNumber.length() && key; i++)
+	{
+		if (TaskBase::Numeral(strNumber[i]))
+		{
+			key = false;
+		}
+	}
+
+	if (key)
+	{
+		return false;
+	}
 
 	if (strNumber[strNumber.length() - 1] == '.')
 	{

@@ -7,7 +7,7 @@ void HomeWork::Run()
 
 	bool exit = false;
 	std::string text = "Выберите пункт меню";
-	std::string items[12] = { "Задача 1",
+	std::string items[11] = { "Задача 1",
 							  "Задача 2",
 							  "Задача 3",
 							  "Задача 4",
@@ -16,11 +16,10 @@ void HomeWork::Run()
 							  "Задача 7",
 							  "Задача 8",
 							  "Задача 9", 
-		                      "Задача 10", 
-		                      "Задача 11",
+		                      "Задача 10", 		                      
 							  "Выход" };
 
-	MenuController menu(items, 12);
+	MenuController menu(items, 11);
 
 	Task1 task1;
 	Task2 task2;
@@ -32,7 +31,7 @@ void HomeWork::Run()
 	Task8 task8;
 	Task9 task9;
 	Task10 task10;
-	Task11 task11;
+	
 
 	while (!exit)
 	{
@@ -67,11 +66,8 @@ void HomeWork::Run()
 			break;
 		case 9:
 			task10.Run();
-			break;
-		case 10:
-			task11.Run();
-			break;
-		case 11:			
+			break;		
+		case 10:			
 			exit = true;
 			break;		
 		}

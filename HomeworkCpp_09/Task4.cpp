@@ -29,6 +29,21 @@ bool Task4::NumberCheck(std::string number)
 	
 	number = RemoveSpaces(number);
 
+	bool key = true;
+
+	for (int i = 0; i < number.length() && key; i++)
+	{
+		if (Numeral(number[i]))
+		{
+			key = false;
+		}
+	}
+
+	if (key)
+	{
+		return false;
+	}
+
 	if (number[number.length() - 1] == '.')
 	{
 		number += '0';

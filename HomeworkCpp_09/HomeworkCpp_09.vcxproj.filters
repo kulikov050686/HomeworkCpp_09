@@ -63,9 +63,6 @@
     <ClCompile Include="Task10.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Task11.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HomeWork.h">
@@ -114,9 +111,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Task10.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Task11.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

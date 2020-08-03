@@ -19,7 +19,8 @@ void Task2::Run()
 		{
 			int bulls = 0;
 			int cows = 0;
-			char a  = ' ';
+			char a = ' ';
+			char k = ' ';
 
 			for (int i = 0; i < 4; i++)
 			{
@@ -38,7 +39,12 @@ void Task2::Run()
 						}
 						else
 						{
-							cows++;
+							if (k != strNumber1[i])
+							{
+								cows++;
+								k = strNumber1[i];
+							}
+
 							a = strNumber1[i];
 						}
 					}
